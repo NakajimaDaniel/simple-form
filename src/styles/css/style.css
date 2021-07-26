@@ -34,25 +34,30 @@ body {
 }
 .main .container form > div {
   width: 20rem;
+  margin-bottom: 1rem;
 }
 .main .container form > div p {
   color: #3333;
   padding-bottom: 0.5rem;
 }
 .main .container form > div input {
-  margin-bottom: 2rem;
   padding-left: 5px;
   width: 100%;
   border: 0;
   outline: 0;
   background: transparent;
   border-bottom: 1px solid #efeeed;
-  color: #efeeed;
+  color: #969696;
   transition: color 0.2s;
 }
 .main .container form > div input:focus {
   color: #333333;
   border-bottom: 1px solid #3333;
+}
+.main .container form > div span {
+  color: #EB4A46;
+  visibility: hidden;
+  font-size: 14px;
 }
 .main .container form button {
   width: 15rem;
@@ -63,6 +68,11 @@ body {
   border-radius: 9999px;
   font-weight: bold;
   font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.main .container form button:hover {
+  opacity: 0.7;
 }
 
 /*# sourceMappingURL=style.css.map */

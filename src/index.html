@@ -16,29 +16,35 @@
         <form>
           <div>
             <p>Full Name</p>
-            <input type="text" placeholder="Name"/>
+            <input type="text" placeholder="Name" id="name-input" oninput=nameValidation() />
+            <span id="name-span" >Minimum of 3 characters</span>
           </div>
           
           <div>
             <p>E-mail</p>
-            <input type="text" placeholder="E-mail"/>
+            <input type="text" placeholder="E-mail" id="email-input" />
+            <span>e-mail invalido</span>
           </div>
 
           <div>
             <p>CPF</p>
-            <input type="text" placeholder="CPF"/>
+            <input type="text" placeholder="CPF" id="cpf-input" />
+            <span>cpf invalido</span>
           </div>
          
           <div>
             <p>Phone Number</p>
-            <input type="text" placeholder="Phone Number"/>
+            <input type="text" placeholder="Phone Number" id="number-input" />
+            <span>telefone invalido</span>
           </div>
         
-          <button type="submit">Cadastrar</button>
+          <button type="submit" >Cadastrar</button>
         </form>
       </div>
     </main>
   </body>
+
+  <script src="scripts.js"></script>
 
   <footer>
 
