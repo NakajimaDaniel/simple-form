@@ -13,29 +13,29 @@
   <body>
     <main class="main">
       <div class="container">
-        <form>
+        <form onsubmit=sendForm() >
           <div>
             <p>Full Name</p>
-            <input type="text" placeholder="Name" id="name-input" oninput=nameValidation() />
+            <input type="text" placeholder="Name" id="name-input" oninput=nameValidation() required />
             <span id="name-span" >Minimum of 3 characters</span>
           </div>
           
           <div>
             <p>E-mail</p>
-            <input type="text" placeholder="E-mail" id="email-input" />
-            <span>e-mail invalido</span>
+            <input type="email" placeholder="E-mail" id="email-input" oninput=emailValidation()  required />
+            <span id="email-span" >Invalid e-mail</span>
           </div>
 
           <div>
             <p>CPF</p>
-            <input type="text" placeholder="CPF" id="cpf-input" />
-            <span>cpf invalido</span>
+            <input type="text" placeholder="CPF" id="cpf-input" required />
+            <span>Invalid CPF</span>
           </div>
          
           <div>
             <p>Phone Number</p>
-            <input type="text" placeholder="Phone Number" id="number-input" />
-            <span>telefone invalido</span>
+            <input type="text" placeholder="Phone Number" id="number-input" required />
+            <span>Invalid phone number</span>
           </div>
         
           <button type="submit" >Cadastrar</button>
