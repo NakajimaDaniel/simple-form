@@ -28,8 +28,8 @@
 
           <div>
             <p>CPF</p>
-            <input type="text" placeholder="CPF" id="cpf-input" required />
-            <span>Invalid CPF</span>
+            <input type="text" placeholder="CPF" id="cpf-input"  pattern="([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})" oninput=cpfValidation() required />
+            <span id="cpf-span">Invalid CPF</span>
           </div>
          
           <div>

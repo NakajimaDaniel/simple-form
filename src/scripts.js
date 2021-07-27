@@ -28,6 +28,20 @@ function emailValidation() {
 }
 
 
+function cpfValidation() {
+
+  const cpf = document.getElementById("cpf-input");
+
+  if (cpf.validity.patternMismatch) {
+    document.getElementById("cpf-span").style.visibility = "visible";
+    document.getElementById("cpf-input").style.borderBottom = "1px solid #EB4A46";
+  } else {
+    document.getElementById("cpf-span").style.visibility = "hidden";
+    document.getElementById("cpf-input").style.borderBottom = "1px solid #efeeed";
+  }
+}
+
+
 function sendForm() {
   
 }
