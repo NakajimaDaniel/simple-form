@@ -34,8 +34,8 @@
          
           <div>
             <p>Phone Number</p>
-            <input type="text" placeholder="Phone Number" id="number-input" required />
-            <span>Invalid phone number</span>
+            <input type="tel" placeholder="Phone Number" id="number-input" pattern="^\s*(\d{2}|\d{0})[-. ]?(\d{5}|\d{4})[-. ]?(\d{4})[-. ]?\s*$"  oninput=phoneValidation() required />
+            <span id="number-span">Invalid phone number</span>
           </div>
         
           <button type="submit" >Cadastrar</button>

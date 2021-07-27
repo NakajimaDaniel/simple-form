@@ -42,6 +42,19 @@ function cpfValidation() {
 }
 
 
+function phoneValidation() {
+  const phone = document.getElementById("number-input");
+
+  if (phone.validity.patternMismatch) {
+    document.getElementById("number-span").style.visibility = "visible";
+    document.getElementById("number-input").style.borderBottom = "1px solid #EB4A46";
+  } else {
+    document.getElementById("number-span").style.visibility = "hidden";
+    document.getElementById("number-input").style.borderBottom = "1px solid #efeeed";
+  }
+}
+
+
 function sendForm() {
   
 }
