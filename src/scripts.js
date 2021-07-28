@@ -56,6 +56,15 @@ function phoneValidation() {
 
 
 function sendForm() {
-  
+
+  const submitButton = document.getElementById("submit-button");
+
+  const loadingRing = document.getElementById("loading-ring");
+  const buttonTitle = document.getElementById("button-title");
+
+
+  buttonTitle.style.visibility = "hidden";
+  loadingRing.style.visibility = "visible";
+
 }
 
