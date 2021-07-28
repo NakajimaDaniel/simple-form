@@ -55,7 +55,8 @@ function phoneValidation() {
 }
 
 
-function sendForm() {
+async function sendForm() {
+
 
   const submitButton = document.getElementById("submit-button");
 
@@ -66,5 +67,31 @@ function sendForm() {
   buttonTitle.style.visibility = "hidden";
   loadingRing.style.visibility = "visible";
 
+  const user = await createUser();
+
+  setTimeout(()=> {
+    buttonTitle.style.visibility = "visible";
+    loadingRing.style.visibility = "hidden";
+  }, 2000)
+
+
+  console.log(user)
+
 }
 
+async function createUser() {
+  const id = Date.now();
+  const name = document.getElementById("name-input").value;
+  const email = document.getElementById("email-input").value;
+  const cpf = document.getElementById("cpf-input").value;
+  const phoneNumber = document.getElementById("number-input").value;
+
+  const user = new Object();
+  user.id = id;
+  user.name = name;
+  user.email = email;
+  user.cpf = cpf;
+  user.phoneNumber = phoneNumber;
+
+  return JSON.parse(JSON.stringify(user));
+}
