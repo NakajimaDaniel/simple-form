@@ -55,29 +55,6 @@ function phoneValidation() {
 }
 
 
-async function sendForm() {
-
-
-  const submitButton = document.getElementById("submit-button");
-
-  const loadingRing = document.getElementById("loading-ring");
-  const buttonTitle = document.getElementById("button-title");
-
-
-  buttonTitle.style.visibility = "hidden";
-  loadingRing.style.visibility = "visible";
-
-  const user = await createUser();
-
-  setTimeout(()=> {
-    buttonTitle.style.visibility = "visible";
-    loadingRing.style.visibility = "hidden";
-  }, 2000)
-
-
-  console.log(user)
-
-}
 
 async function createUser() {
   const id = Date.now();
@@ -94,4 +71,67 @@ async function createUser() {
   user.phoneNumber = phoneNumber;
 
   return JSON.parse(JSON.stringify(user));
+}
+
+
+
+
+let db = null;
+
+function dbConection() {
+
+  const request  = indexedDB.open('simpleForm-db', 1);
+
+  request.onsuccess = (e) => {
+    db = e.target.result;
+  }
+
+  request.onupgradeneeded = (e) => { 
+    db = e.target.result;
+  
+    var objectStore = db.createObjectStore("user", { keyPath: "id" });
+    
+    objectStore.createIndex("name", "name", { unique: false });
+
+    objectStore.createIndex("email", "email", { unique: true });
+
+  }
+
+}
+
+dbConection();
+
+async function addUser() {
+ 
+  const transaction = db.transaction("user", "readwrite");
+
+  const users = transaction.objectStore("user");
+
+  const user = await createUser();
+
+  users.add(user)
+
+}
+
+
+async function sendForm(event) {
+  event.preventDefault();
+
+  const submitButton = document.getElementById("submit-button");
+
+  const loadingRing = document.getElementById("loading-ring");
+  const buttonTitle = document.getElementById("button-title");
+
+
+  buttonTitle.style.visibility = "hidden";
+  loadingRing.style.visibility = "visible";
+
+  addUser();
+
+  setTimeout(()=> {
+    buttonTitle.style.visibility = "visible";
+    loadingRing.style.visibility = "hidden";
+  }, 2000)
+
+
 }

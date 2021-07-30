@@ -13,7 +13,7 @@
   <body>
     <main class="main">
       <div class="container">
-        <form onsubmit=sendForm() >
+        <form onsubmit="sendForm(event)">
           <div>
             <p>Full Name</p>
             <input type="text" placeholder="Name" id="name-input" oninput=nameValidation() required />
@@ -37,12 +37,14 @@
             <input type="tel" placeholder="Phone Number" id="number-input" pattern="^\s*(\d{2}|\d{0})[-. ]?(\d{5}|\d{4})[-. ]?(\d{4})[-. ]?\s*$"  oninput=phoneValidation() required />
             <span id="number-span">Invalid phone number</span>
           </div>
-        
-          <button id="submit-button" type="submit" >
+
+          <button id="submit-button" type="submit">
             <div class="loading-ring" id="loading-ring" ><div></div><div></div><div></div><div></div></div>
             <div class="button-title" id="button-title" >Cadastrar</div>
           </button>
+
         </form>
+
       </div>
     </main>
   </body>
