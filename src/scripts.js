@@ -109,7 +109,14 @@ async function addUser() {
 
   const user = await createUser();
 
-  users.add(user)
+  users.add(user);
+
+  // transaction.oncomplete = () => {
+  //   alert("usuario cadastrado")
+  // }
+  transaction.onerror = () => {
+    alert("user and/or email already register")
+  }
 
 }
 
@@ -125,7 +132,7 @@ async function sendForm(event) {
 
   buttonTitle.style.visibility = "hidden";
   loadingRing.style.visibility = "visible";
-
+  
   addUser();
 
   setTimeout(()=> {
