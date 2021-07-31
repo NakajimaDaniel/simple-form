@@ -121,4 +121,19 @@ body {
   top: -13px;
 }
 
+@media screen and (max-width: 380px) {
+  .main .container {
+    width: 19rem;
+  }
+  .main .container form {
+    width: 19rem;
+  }
+  .main .container form > div {
+    width: 15rem;
+  }
+  .main .container form button {
+    width: 10rem;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
