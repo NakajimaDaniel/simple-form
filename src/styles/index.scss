@@ -134,3 +134,24 @@ body {
   position: relative;
   top: -13px
 }
+
+@media screen and (max-width: 380px) {
+
+  .main {
+    .container {
+      width: 19rem;
+
+      form {
+        width: 19rem;
+
+        > div{
+          width: 15rem;
+        }
+
+        button {
+          width: 10rem;
+        }
+      }
+    }
+  }
+}
