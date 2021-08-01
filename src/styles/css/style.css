@@ -20,6 +20,11 @@ header button {
   background-color: #00C8B3;
   border-radius: 10px;
   font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+header button:hover {
+  opacity: 0.7;
 }
 
 .main {
@@ -147,6 +152,32 @@ header button {
   .main .container form button {
     width: 10rem;
   }
+}
+.users-container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.users-container .users-list {
+  display: flex;
+  background-color: #ffff;
+  padding: 2rem;
+  justify-content: left;
+  flex-direction: column;
+  width: 30rem;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  margin: 5rem 5rem;
+  color: #969696;
+}
+.users-container .user {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.7rem;
+}
+.users-container .user > span {
+  color: #969696;
 }
 
 /*# sourceMappingURL=style.css.map */
