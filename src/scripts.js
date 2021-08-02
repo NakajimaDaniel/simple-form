@@ -142,3 +142,20 @@ async function sendForm(event) {
 
 
 }
+
+
+
+
+function getUserData() {
+  const transaction = db.transaction("user", "readwrite");
+
+  const users = transaction.objectStore("user");
+
+  const gelAllUsers = users.getAll();
+
+  gelAllUsers.onsuccess = (e) => {
+    insertData(e.target.result);
+  }
+
+
+}
