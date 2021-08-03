@@ -10,6 +10,7 @@ function dbConection() {
 
   request.onsuccess = (e) => {
     db = e.target.result;
+    getUserData();
   }
 
   request.onupgradeneeded = (e) => { 
@@ -80,6 +81,7 @@ function insertData(users) {
     const deleteButton = document.createElement("a");
     const deleteButtonContent = document.createTextNode("x");
     deleteButton.appendChild(deleteButtonContent);
+    deleteButton.id = `delete-user ${user.id}`;
     userDiv.appendChild(deleteButton);
 
   })
