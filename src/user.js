@@ -76,7 +76,7 @@ function insertData(users) {
     userDataDiv.appendChild(userPhoneSpan);
     userPhoneSpan.appendChild(userPhoneData);
 
-    //delete
+    //delete user
 
     const deleteButton = document.createElement("a");
     const deleteButtonContent = document.createTextNode("x");
@@ -84,7 +84,27 @@ function insertData(users) {
     deleteButton.id = `delete-user ${user.id}`;
     userDiv.appendChild(deleteButton);
 
+    const deleteButtonDom = document.getElementById(`delete-user ${user.id}`);
+    deleteButtonDom.addEventListener("click", function(){deleteUser(user.id)});
+
   })
 
+
+}
+
+
+
+
+function deleteUser(userId) {
+
+  const transaction = db.transaction("user", "readwrite");
+
+  const users = transaction.objectStore("user");
+
+  const request = users.delete(userId);
+
+  request.onsuccess = (e) => {
+    alert("User deleted");
+  }
 
 }
