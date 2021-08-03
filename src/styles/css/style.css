@@ -144,14 +144,22 @@ header button:hover {
 }
 
 @media screen and (max-width: 380px) {
+  header {
+    padding: 2rem;
+  }
+
+  .main img {
+    max-width: 15rem;
+  }
   .main .container {
-    width: 19rem;
+    width: 22rem;
+    margin: 3rem;
   }
   .main .container form {
-    width: 19rem;
+    width: 22rem;
   }
   .main .container form > div {
-    width: 15rem;
+    width: 18rem;
   }
   .main .container form button {
     width: 10rem;
@@ -223,6 +231,40 @@ header button:hover {
 .user .user-data > span {
   color: #969696;
   margin-right: 2px;
+  word-break: break-all;
+}
+
+@media screen and (max-width: 500px) {
+  .users-container img {
+    width: 17rem;
+  }
+  .users-container .users-list {
+    width: 25rem;
+    padding: 1.55rem;
+  }
+
+  .user {
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    padding-left: 0.4rem;
+    margin: 0.3rem;
+  }
+}
+@media screen and (max-width: 390px) {
+  .users-container img {
+    width: 17rem;
+  }
+  .users-container .users-list {
+    width: 23rem;
+    padding: 1.55rem;
+  }
+
+  .user {
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    padding-left: 0.4rem;
+    margin: 0.5rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

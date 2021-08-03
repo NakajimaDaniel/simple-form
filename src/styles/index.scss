@@ -161,15 +161,22 @@ header {
 
 @media screen and (max-width: 380px) {
 
-  .main {
-    .container {
-      width: 19rem;
+  header {
+    padding: 2rem;
+  }
 
+  .main {
+    img {
+      max-width: 15rem;
+    }
+    .container {
+      width: 22rem;
+      margin: 3rem;
       form {
-        width: 19rem;
+        width: 22rem;
 
         > div{
-          width: 15rem;
+          width: 18rem;
         }
 
         button {
@@ -262,7 +269,59 @@ header {
     >span {
       color: #969696;
       margin-right: 2px;
+      word-break: break-all;
     }
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  
+
+  .users-container {
+
+    img {
+      width: 17rem;
+    }
+
+    .users-list {
+      width: 25rem;
+      padding: 1.55rem;
+    }
+  }
+
+
+  .user {
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    padding-left: 0.4rem;
+    margin: 0.3rem;
+  }
+
+}
+
+@media screen and (max-width: 390px) {
+
+
+  .users-container {
+
+    img {
+      width: 17rem;
+    }
+
+    .users-list {
+      width: 23rem;
+      padding: 1.55rem;
+    }
+  }
+
+
+  .user {
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    padding-left: 0.4rem;
+    margin: 0.5rem;
+
   }
 
 }
