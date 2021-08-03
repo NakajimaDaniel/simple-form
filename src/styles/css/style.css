@@ -32,6 +32,10 @@ header button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+.main > img {
+  max-width: 20rem;
 }
 .main .container {
   display: flex;
@@ -158,6 +162,11 @@ header button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+.users-container > img {
+  max-width: 20rem;
+  margin-top: 5rem;
 }
 .users-container .users-list {
   display: flex;
