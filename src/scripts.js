@@ -1,19 +1,23 @@
-// module.exports = {createUser, dbConection, addUser, sendForm, nameValidation, emailValidation, cpfValidation, phoneValidation}
+module.exports = {createUser, dbConection, addUser, sendForm, nameValidation, emailValidation, cpfValidation, phoneValidation}
 
-const nameInput = document.getElementById("name-input");
-nameInput.addEventListener("input", nameValidation);
 
-const emailInput = document.getElementById("email-input");
-emailInput.addEventListener("input", emailValidation);
+document.addEventListener('DOMContentLoaded', function () {
+  const nameInput = document.getElementById("name-input");
+  nameInput.addEventListener("input", nameValidation);
+  
+  const emailInput = document.getElementById("email-input");
+  emailInput.addEventListener("input", emailValidation);
+  
+  const cpfInput = document.getElementById("cpf-input");
+  cpfInput.addEventListener("input", cpfValidation);
+  
+  const phoneInput = document.getElementById("number-input");
+  phoneInput.addEventListener("input", phoneValidation);
+  
+  const userForm = document.getElementById("user-form");
+  userForm.addEventListener("submit", function() {sendForm(event)})
+});
 
-const cpfInput = document.getElementById("cpf-input");
-cpfInput.addEventListener("input", cpfValidation);
-
-const phoneInput = document.getElementById("number-input");
-phoneInput.addEventListener("input", phoneValidation);
-
-const userForm = document.getElementById("user-form");
-userForm.addEventListener("submit", function() {sendForm(event)})
 
 
 function nameValidation() {
@@ -95,6 +99,10 @@ async function createUser() {
 let db = null;
 
 function dbConection() {
+
+  if(db) {
+    return;
+  }
 
   const request  = indexedDB.open('simpleForm-db', 1);
 
