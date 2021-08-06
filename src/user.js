@@ -1,16 +1,33 @@
 
 
 
+document.addEventListener('DOMContentLoaded', function () {
+
+  dbConection2(() => {
+    getUserData(() => {
+      
+    })
+  
+  });
+
+});
+
 
 let db = null;
 
-function dbConection() {
+
+function dbConection2(callback) {
+
+  if(db) {
+    callback();
+    return;
+  }
 
   const request  = indexedDB.open('simpleForm-db', 1);
 
   request.onsuccess = (e) => {
     db = e.target.result;
-    getUserData();
+    callback();
   }
 
   request.onupgradeneeded = (e) => { 
@@ -26,7 +43,6 @@ function dbConection() {
 
 }
 
-dbConection();
 
 
 function getUserData() {
@@ -40,14 +56,15 @@ function getUserData() {
     insertData(e.target.result);
   }
 
-
 }
 
-function insertData(users) {
+
+
+function insertData(data) {
 
   const wrapper = document.getElementById("users-list");
 
-  users.map((user)=> {
+  data.map((user)=> {
     const userDiv = document.createElement('div')
     wrapper.appendChild(userDiv);
     userDiv.className = `user ${user.id}`;
