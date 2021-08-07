@@ -1,4 +1,4 @@
-module.exports = {createUser, dbConection, addUser, sendForm, nameValidation, emailValidation, cpfValidation, phoneValidation, insertData, getUserData, dbConection2 }
+// module.exports = {createUser, dbConection, addUser, sendForm, nameValidation, emailValidation, cpfValidation, phoneValidation, insertData, getUserData, dbConection2 }
 
 
 document.addEventListener('DOMContentLoaded', function () {
