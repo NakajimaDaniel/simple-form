@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "sass": "sass --watch ./src/styles/index.scss:./src/styles/css/style.css",
-    "build": "webpack ./src/scripts.js"
+    "sass": "sass --watch ./src/styles/index.scss:./src/styles/css/style.css"
   },
   "jest": {
     "setupFiles": [
@@ -16,7 +15,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@testing-library/dom": "^8.1.0",
     "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/user-event": "^13.2.1",
     "sass": "^1.36.0"
   },
   "devDependencies": {
